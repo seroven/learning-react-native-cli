@@ -1,11 +1,28 @@
 import React from 'react'
-import { StyleSheet, Text, View } from 'react-native'
+import { StyleSheet, Text, Touchable, TouchableOpacity, View } from 'react-native'
+import { AppbarOptionType } from '../types/AppbarTypes'
+
+const options:AppbarOptionType[] = [
+  {
+    name: 'Counter',
+    link: 'counter'
+  },
+  {
+    name: 'Hello',
+    link: 'hello'
+  }
+]
 
 export const Appbar = () => {
   return (
     <View style={styles.container}>
-      <Text style={styles.option}>Counter</Text>
-      <Text style={styles.option}>Hello</Text>
+      {
+        options.map(o => 
+          <TouchableOpacity key={o.name}>
+            <Text>{o.name}</Text>
+          </TouchableOpacity>
+          )
+      }
     </View>
   )
 }
