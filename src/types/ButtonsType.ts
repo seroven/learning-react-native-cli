@@ -1,7 +1,7 @@
 import React from "react";
 
 export interface FloatingButtonActionType {
-  setCounter: React.Dispatch<React.SetStateAction<number>>,
+  press: () => void,
   text: string,
   right?: boolean,
   left?: boolean,
