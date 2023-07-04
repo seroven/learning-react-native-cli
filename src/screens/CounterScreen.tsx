@@ -5,6 +5,8 @@ import {
   View,
 } from 'react-native';
 import { FloatingActionButton } from '../components/FloatingActionButton';
+import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
+import { faMugSaucer } from '@fortawesome/free-solid-svg-icons';
 
 export const CounterScreen = () => {
   const [counter, setCounter] = useState(0);
@@ -13,8 +15,8 @@ export const CounterScreen = () => {
       <Text style={styles.text}>Counter</Text>
       <Text style={[styles.text, styles.big, styles.highlight]}>{counter}</Text>
 
-      <FloatingActionButton setCounter={setCounter} text='+' bottom right/> 
-      <FloatingActionButton setCounter={setCounter} text='-' bottom left/> 
+      <FloatingActionButton press={() => setCounter(c => c+1)} text='+' bottom right/> 
+      <FloatingActionButton press={() => setCounter(c => c-1)} text='-' bottom left/> 
 
     </View>
   );

@@ -3,7 +3,7 @@ import {StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 import {FloatingButtonActionType} from '../types/ButtonsType';
 
 export const FloatingActionButton: React.FC<FloatingButtonActionType> = ({
-  setCounter,
+  press,
   text,
   top,
   bottom,
@@ -19,7 +19,7 @@ export const FloatingActionButton: React.FC<FloatingButtonActionType> = ({
   ];
 
   return (
-    <TouchableOpacity style={FloatingActionButtonStyles}>
+    <TouchableOpacity style={FloatingActionButtonStyles} onPress={press}>
       <View style={styles.button}>
         <Text style={styles.buttonText}>{text}</Text>
       </View>
